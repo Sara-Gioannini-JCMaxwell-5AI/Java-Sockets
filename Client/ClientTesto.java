@@ -24,7 +24,15 @@ public class ClientTesto {
             System.out.println("Uso: java client-Testo <indirizzo IP Server> <Porta Server>");
             return;
         }
-		
+	
+	    String nickname = null;
+        try{
+            System.out.println("Inserisci il nickname");
+            nickname = (new BufferedReader(new InputStreamReader(System.in))).readLine();
+        } catch(IOException e) 
+            { System.out.println("I/O Error");
+                                 System.exit(-1); }
+	  
 	String hostName = args[0];
 	int portNumber = Integer.parseInt(args[1]);
 	try {
