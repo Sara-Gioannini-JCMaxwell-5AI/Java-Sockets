@@ -9,10 +9,11 @@ Creazione di un programma Client-Server che permette di aprire una chat di grupp
 
 ## Uso
 
-Avviare il programma con il "prompt dei comandi" (cmd) con i seguenti passaggi:<br>
+Avviare il programma con il "prompt dei comandi" (cmd) con i seguenti passaggi: <br>
 • Server
  1. aprire un prompt e usare il comando "dir <cartella di destinazione server>" tramite cmd si sceglie il luogo del server
- 2. con il comando "java c <ServerWorker (indirizzoIp) (portaServer)>" si avvia il server<br>
+ 2. con il comando "java c <ServerWorker (indirizzoIp) (portaServer)>" si avvia il server 
+ <br>
 • Client
  1. aprire un altro prompt e usare il comando "dir <cartella di destinazione client>" tramite cmd si sceglie il luogo del client
  2. con il comando "java c <ClientTesto (portaServer)>" si avvia il client
