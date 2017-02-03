@@ -17,6 +17,8 @@ Avviare il programma con il "prompt dei comandi" (cmd) con i seguenti passaggi:<
 1. aprire un altro prompt e usare il comando "cd 'cartella di destinazione client'" tramite cmd si sceglie il luogo del client <br>
 2. con il comando "javac 'ClientTesto (portaServer)'" si avvia il client
 
+In seguito, nel prompt Client si proseguirà attraverso delle istruzioni visualizzate sullo schermo.
+
 ## Collaboratori
  
 Antohi, Gioannini, Mari
