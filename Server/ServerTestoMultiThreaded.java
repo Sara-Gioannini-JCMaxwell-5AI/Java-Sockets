@@ -1,18 +1,12 @@
-/*
- * ServerTesto MultiThreaded.java Server che attende per richieste di connessioni da Clients
- * e li gestisce in modo contemporaneo generando un socket "worker" per ogni connessione.
- * 
- */
-
-/**
- *
- * @author Prof. Matteo Palitto
- */
 import java.net.*;
 import java.io.*;
+import java.util.ArrayList;
 
 public class ServerTestoMultiThreaded {
 
+    static ArrayList<SocketWorker> workers_connessi;
+    static ArrayList<String> group_chats;
+    
     public static void main(String[] args) {
 
         if (args.length != 1) {
@@ -21,7 +15,9 @@ public class ServerTestoMultiThreaded {
         }
 
         int portNumber = Integer.parseInt(args[0]);
-
+        workers_connessi = new ArrayList();
+        group_chats = new ArrayList();
+        group_chats.add("default");
 
         try{
             ServerSocket server = new ServerSocket(portNumber);
@@ -34,6 +30,7 @@ public class ServerTestoMultiThreaded {
                     w = new SocketWorker(server.accept());
                     Thread t = new Thread(w);
                     t.start();
+                    workers_connessi.add(w);
                 } catch (IOException e) {
                     System.out.println("Connessione NON riuscita con client: ");
                     System.exit(-1);
@@ -43,7 +40,5 @@ public class ServerTestoMultiThreaded {
             System.out.println("Error! Porta: " + portNumber + " non disponibile");
             System.exit(-1);
         }
-
-        
-    }
+    }   
 }
